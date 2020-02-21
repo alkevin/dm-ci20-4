@@ -11,4 +11,4 @@ jobs:
       - name: Install Dockder
         run: curl -sSL https://get.docker.com/ | sh
       - name: Install hadolint
-        run: docker run --rm -i hadolint/hadolint --no-cache=true < Dockerfile
+        run: docker run --rm -i hadolint/hadolint < Dockerfile
