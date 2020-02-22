@@ -1,0 +1,12 @@
+name: Workflow for security-checker
+on: [push]
+
+jobs:
+  hadolint:
+    name: Security Checker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v2
+      - name: Download security checker
+        run: php security-checker.phar security:check /composer.lock
