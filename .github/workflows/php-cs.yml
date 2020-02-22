@@ -16,4 +16,4 @@ jobs:
       #   php-cs-fixer
       #   php php-cs-fixer.phar fix /src --dry-run
       - name: Launch cs fixer
-        run: sudo bin/php-cs-fixer-v2.phar fix /src --dry-run
+        run: sudo php bin/php-cs-fixer-v2.phar fix /src --dry-run
