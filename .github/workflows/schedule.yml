@@ -1,8 +1,9 @@
 name: Workflow schedule test-integration
+
 on:
   schedule:
-    - cron: '* * * * *'
-    #'0 0 * * *' tous les jours à minuits : https://crontab.guru/every-day-at-midnight
+  - cron: '* * * * *'
+  #'0 0 * * *' tous les jours à minuits : https://crontab.guru/every-day-at-midnight
 
 jobs:
   dependencies:
@@ -11,6 +12,8 @@ jobs:
     steps:
     - name: Checkout source code
       uses: actions/checkout@v2
+      with:
+          ref: action
     - name: Cache Composer
       id: cache-composer
       uses: actions/cache@v1
