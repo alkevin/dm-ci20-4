@@ -9,5 +9,5 @@
 ## Badges 
 
 -------
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md) 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/alkevin/dm-ci20-4/blob/master/CODE_OF_CONDUCT.md) 
 -------
