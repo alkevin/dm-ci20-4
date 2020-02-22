@@ -1,0 +1,38 @@
+name: Workflow schedule test-integration
+on:
+  schedule:
+    - cron: '* * * * *'
+    #'0 0 * * *' tous les jours à minuits : https://crontab.guru/every-day-at-midnight
+
+jobs:
+  dependencies:
+    name: Install Php dependencies
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v2
+    - name: Cache Composer
+      id: cache-composer
+      uses: actions/cache@v1
+      with: 
+        path: vendor/
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+    - name:  Install dependencies
+      if: steps.cache-composer.outputs.cache-hit != 'true'
+      run: composer install --prefer-dist --no-progress --no-suggest --no-scripts
+  
+  test-integration:
+    name: Test Intégration
+    runs-on: ubuntu-latest
+    needs: dependencies
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v2
+    - name: Cache Composer
+      id: cache-composer
+      uses: actions/cache@v1
+      with:
+        path: vendor/
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+    - name: Run Test Integration
+      run: bin/phpunit tests/Integration
