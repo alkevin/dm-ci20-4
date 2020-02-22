@@ -25,7 +25,7 @@ Aider les contributeurs de votre projet.
 ​
 Automatiser le lancement des outils de Code Quality (n'hésitez pas à en rajouter).
 ​
-- [X ] [Hadolint](https://github.com/hadolint/hadolint)
+- [X] [Hadolint](https://github.com/hadolint/hadolint)
 - [ ] [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) (en mode dry-run avec le Ruleset de Symfony)
 - [ ] [Security checker](https://github.com/sensiolabs/security-checker)
 ​
@@ -33,9 +33,9 @@ Automatiser le lancement des outils de Code Quality (n'hésitez pas à en rajout
 ​
 Automatiser le lancement des différents tests
 ​
-- [X ] Tests unitaires
-- [ ] Tests intégrations (à lancer également de manière planifié)
-- [ X] Tests fonctionnels
+- [X] Tests unitaires
+- [X] Tests intégrations (à lancer également de manière planifié)
+- [X] Tests fonctionnels
 ​
 ### Automatiser docker images
 ​
