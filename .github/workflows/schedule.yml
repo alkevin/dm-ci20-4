@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout source code
       uses: actions/checkout@v2
+      with:
+          ref: action
     - name: Cache Composer
       id: cache-composer
       uses: actions/cache@v1
