@@ -16,5 +16,3 @@ jobs:
           php-cs-fixer
       - name: Launch cs fixer
         run: php php-cs-fixer.phar fix /src --dry-run
-
-

@@ -1,8 +1,10 @@
 name: Workflow schedule test-integration
+
 on:
   schedule:
     - cron: '* * * * *'
-    #'0 0 * * *' tous les jours à minuits : https://crontab.guru/every-day-at-midnight
+  # '0 0 * * *'  tous les jours à minuits : https://crontab.guru/every-day-at-midnight
+  # '0 0 * * 6,0' tous les week-end : https://crontab.guru/every-weekend
 
 jobs:
   dependencies:
@@ -20,7 +22,7 @@ jobs:
     - name:  Install dependencies
       if: steps.cache-composer.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress --no-suggest --no-scripts
-  
+
   test-integration:
     name: Test Intégration
     runs-on: ubuntu-latest
