@@ -11,7 +11,7 @@ jobs:
       - name: Install Composer
         run: |
           curl -sS https://getcomposer.org/installer | php
-          mv composer.phar /usr/local/bin/composer
+          sudo mv composer.phar /usr/local/bin/composer
       - name: Install php-cs
         run: |
           curl -L https://cs.symfony.com/download/php-cs-fixer-v2.phar -o php-cs-fixer
