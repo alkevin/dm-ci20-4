@@ -1,0 +1,14 @@
+name: Workflow for hadolint
+on: [push]
+
+jobs:
+  hadolint:
+    name: Test Dockerfile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v2
+      - name: Install Dockder
+        run: curl -sSL https://get.docker.com/ | sh
+      - name: Install hadolint
+        run: docker run --rm -i hadolint/hadolint < Dockerfile
