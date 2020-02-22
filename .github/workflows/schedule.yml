@@ -2,7 +2,7 @@ name: Workflow schedule test-integration
 
 on:
   schedule:
-  - cron: '0 0 * * *'
+  - cron: '* * * * *'
   #'0 0 * * 6,0' tous les week-end : https://crontab.guru/every-weekend
 
 jobs:
