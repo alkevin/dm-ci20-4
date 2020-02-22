@@ -2,11 +2,34 @@ name: Workflow for security-checker
 on: [push]
 
 jobs:
-  hadolint:
+  dependencies:
+    name: Install Php dependencies
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v2
+    - name: Cache Composer
+      id: cache-composer
+      uses: actions/cache@v1
+      with: 
+        path: vendor/
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+    - name:  Install dependencies
+      if: steps.cache-composer.outputs.cache-hit != 'true'
+      run: composer install --prefer-dist --no-progress --no-suggest --no-scripts
+  
+  security-checker:
     name: Security Checker
     runs-on: ubuntu-latest
+    needs: dependencies
     steps:
       - name: Checkout Source
         uses: actions/checkout@v2
+      - name: Cache Composer
+        id: cache-composer
+        uses: actions/cache@v1
+        with:
+          path: vendor/
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
       - name: Download security checker
         run: php security-checker.phar security:check /composer.lock
