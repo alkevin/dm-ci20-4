@@ -30,11 +30,7 @@ jobs:
     steps:
     - name: Checkout source code
       uses: actions/checkout@v2
-    - name: Cache Composer
-      id: cache-composer
-      uses: actions/cache@v1
-      with:
-        path: vendor/
-        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+    - name:  Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest --no-scripts
     - name: Run Test Integration
       run: bin/phpunit tests/Integration
