@@ -14,5 +14,5 @@ jobs:
           sudo chmod a+x php-cs-fixer
           sudo mv php-cs-fixer /usr/local/bin/php-cs-fixer
           php-cs-fixer
-      - name: Check for vulnerabilities
+      - name: Launch cs fixer
         run: php vendor/bin/php-cs-fixer.phar fix /src --dry-run

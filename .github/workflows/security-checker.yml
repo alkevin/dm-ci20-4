@@ -32,4 +32,4 @@ jobs:
           path: vendor/
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
       - name: Check for vulnerabilities
-        run: php security-checker.phar security:check composer.lock
+        run: php bin/security-checker.phar security:check composer.lock
