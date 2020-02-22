@@ -14,18 +14,18 @@ Votre objectif est donc de rendre le projet le plus accessible et de guider au m
 ​
 Aider les contributeurs de votre projet.
 ​
-- [ ] Template de Pull Request
-- [ ] Templates d'issues (Feature, Bug, etc...)
-- [ ] Readme.md
-- [ ] Contributing.md
+- [X] Template de Pull Request
+- [X] Templates d'issues (Feature, Bug, etc...)
+- [X] Readme.md
+- [X] Contributing.md
 - [ ] Makefile
-- [ ] Flow GIT
+- [X] Flow GIT
 ​
 ### Qualité de code
 ​
 Automatiser le lancement des outils de Code Quality (n'hésitez pas à en rajouter).
 ​
-- [ ] [Hadolint](https://github.com/hadolint/hadolint)
+- [X ] [Hadolint](https://github.com/hadolint/hadolint)
 - [ ] [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) (en mode dry-run avec le Ruleset de Symfony)
 - [ ] [Security checker](https://github.com/sensiolabs/security-checker)
 ​
@@ -33,9 +33,9 @@ Automatiser le lancement des outils de Code Quality (n'hésitez pas à en rajout
 ​
 Automatiser le lancement des différents tests
 ​
-- [ ] Tests unitaires
+- [X ] Tests unitaires
 - [ ] Tests intégrations (à lancer également de manière planifié)
-- [ ] Tests fonctionnels
+- [ X] Tests fonctionnels
 ​
 ### Automatiser docker images
 ​
