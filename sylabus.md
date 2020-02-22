@@ -26,8 +26,8 @@ Aider les contributeurs de votre projet.
 Automatiser le lancement des outils de Code Quality (n'hésitez pas à en rajouter).
 ​
 - [X] [Hadolint](https://github.com/hadolint/hadolint)
-- [ ] [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) (en mode dry-run avec le Ruleset de Symfony)
-- [ ] [Security checker](https://github.com/sensiolabs/security-checker)
+- [] [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) (en mode dry-run avec le Ruleset de Symfony)
+- [x] [Security checker](https://github.com/sensiolabs/security-checker)
 ​
 ### Automatisation des tests
 ​
