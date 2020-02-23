@@ -16,19 +16,19 @@ jobs:
     - name: Get the version
       id: vars
       run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
-    - name: Build the tagged PHP Docker image
-      run: docker build --target=php -t docker.pgk.github.com/${{ github.repository }}/php:$
-    - name: Build the tagged NGINX Docker image
-      run: docker build --target=nginx -t docker.pgk.github.com/${{ github.repository }}/nginx:$
-    - name: Build the latest PHP Docker image
-      run: docker build --target=php -t docker.pgk.github.com/${{ github.repository }}/php:latest
-    - name: Build the latest NGINX Docker image
-      run: docker build --target=nginx -t docker.pgk.github.com/${{ github.repository }}/nginx:latest
-    - name: Publish the tagged image to Docker Repository
+    - name: Build the tagged PHP image
+      run: docker build --target=php --tag php
+    - name: Build the tagged NGINX image
+      run: docker build --target=nginx -tag nginx
+    - name: Publish the tagged image to Github Registry
       run: |
+        docker tag php docker.pgk.github.com/${{ github.repository }}/php:$
         docker push docker.pgk.github.com/${{ github.repository }}/php:$
+        docker tag nginx docker.pgk.github.com/${{ github.repository }}/nginx:$
         docker push docker.pgk.github.com/${{ github.repository }}/nginx:$
-    - name: Publish the tagged image to Docker Repository
+    - name: Publish the latest image to Github Registry
       run: |
+        docker tag docker.pgk.github.com/${{ github.repository }}/php:latest
         docker push docker.pgk.github.com/${{ github.repository }}/php:latest
+        docker tag docker.pgk.github.com/${{ github.repository }}/nginx:latest
         docker push docker.pgk.github.com/${{ github.repository }}/nginx:latest
