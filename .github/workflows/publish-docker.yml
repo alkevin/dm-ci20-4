@@ -17,9 +17,9 @@ jobs:
       id: vars
       run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
     - name: Build the tagged PHP image
-      run: docker build --target=php --tag php
+      run: docker build --target=php -t php
     - name: Build the tagged NGINX image
-      run: docker build --target=nginx -tag nginx
+      run: docker build --target=nginx -t nginx
     - name: Publish the tagged image to Github Registry
       run: |
         docker tag php docker.pgk.github.com/${{ github.repository }}/php:$
