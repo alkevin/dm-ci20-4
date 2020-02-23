@@ -8,7 +8,10 @@ If you'd like to contribute, please read the following documents:
 * [Pull requests][0]
 * [Reporting a Bug][1]
 * [Request a feature][2]
+* Submitting a fix
+* Discussing the current state of the code
 * [Security issues][3]
+* Becoming a maintainer
 * [Documentation issue][4]
 * [Support question][5]
 * [Code of conduct][6]

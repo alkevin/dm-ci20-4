@@ -1,20 +1,38 @@
-| Q             | A
-| ------------- | ---
-| Branch?       | master for features / 3.4, 4.4 or 5.0 for bug fixes <!-- see below -->
-| Bug fix?      | yes/no
-| New feature?  | yes/no <!-- please update src/**/CHANGELOG.md files -->
-| Deprecations? | yes/no <!-- please update UPGRADE-*.md and src/**/CHANGELOG.md files -->
-| Tickets       | Fix #... <!-- prefix each issue number with "Fix #", if any -->
-| License       | MIT
-| Doc PR        | symfony/symfony-docs#... <!-- required for new features -->
-<!--
-Replace this notice by a short README for your feature/bugfix. This will help people
-understand your PR and can be used as a start for the documentation.
+# Description
 
-Additionally (see https://symfony.com/releases):
- - Always add tests and ensure they pass.
- - Never break backward compatibility (see https://symfony.com/bc).
- - Bug fixes must be submitted against the lowest maintained branch where they apply
-   (lowest branches are regularly merged to upper ones so they get the fixes too.)
- - Features and deprecations must be submitted against branch master.
--->
+Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
+
+Resolve # (issue)
+> please link related issues
+## Type of change
+
+Please delete options that are not relevant.
+
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] This change requires a documentation update
+
+# How Has This Been Tested?
+
+Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration
+
+- [ ] Test A
+- [ ] Test B
+
+**Test Configuration**:
+* Firmware version:
+* Hardware:
+* Toolchain:
+* SDK:
+
+# Checklist:
+
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my own code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] New and existing unit tests pass locally with my changes
+- [ ] Any dependent changes have been merged and published in downstream modules

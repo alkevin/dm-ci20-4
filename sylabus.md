@@ -41,5 +41,5 @@ Automatiser le lancement des différents tests
 ​
 Automatiser la création des images docker et l'envoie sur le registry de GitHub pour la **PRODUCTION**.
 ​
-- [ ] Image PHP (`docker build --target=php -t <image_name> .`)
-- [ ] Image Nginx (`docker build --target=nginx -t <image_name> .`)
+- [X] Image PHP (`docker build --target=php -t <image_name> .`)
+- [X] Image Nginx (`docker build --target=nginx -t <image_name> .`)
