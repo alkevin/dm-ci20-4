@@ -1,4 +1,4 @@
-name: Build and Publish Docker
+name: Build and Publish Github regisrty
 on:
   push:
     tags:
@@ -11,20 +11,24 @@ jobs:
       uses: actions/checkout@master
     - name: Install Docker
       run: curl -sSL https://get.docker.com/ | sh
-    - name: Login to DockerHub Registry
+    - name: Login to Github Registry
       run: echo ${{ secrets.REGISTRY_TOKEN }} | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
     - name: Get the version
       id: vars
       run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
     - name: Build the tagged PHP Docker image
-      run: docker build --target=php --tag wingshell/docker-dm-ci20-4-php:$
+      run: docker build --target=php -t docker.pgk.github.com/${{ github.repository }}/php:$
     - name: Build the tagged NGINX Docker image
-      run: docker build --target=nginx --tag wingshell/docker-dm-ci20-4-nginx:$
+      run: docker build --target=nginx -t docker.pgk.github.com/${{ github.repository }}/nginx:$
+    - name: Build the latest PHP Docker image
+      run: docker build --target=php -t docker.pgk.github.com/${{ github.repository }}/php:latest
+    - name: Build the latest NGINX Docker image
+      run: docker build --target=nginx -t docker.pgk.github.com/${{ github.repository }}/nginx:latest
     - name: Publish the tagged image to Docker Repository
       run: |
-        docker push wingshell/docker-dm-ci20-4-php:$
-        docker push wingshell/docker-dm-ci20-4-nginx:$
+        docker push docker.pgk.github.com/${{ github.repository }}/php:$
+        docker push docker.pgk.github.com/${{ github.repository }}/nginx:$
     - name: Publish the tagged image to Docker Repository
       run: |
-        docker push wingshell/docker-dm-ci20-4-php:latest
-        docker push wingshell/docker-dm-ci20-4-nginx:latest
+        docker push docker.pgk.github.com/${{ github.repository }}/php:latest
+        docker push docker.pgk.github.com/${{ github.repository }}/nginx:latest
