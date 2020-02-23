@@ -23,13 +23,13 @@ jobs:
         NGINX_ID=docker.pgk.github.com/${{ github.repository }}/nginx
         VERSION=$(echo ${GITHUB_REF:10})
         echo ${GITHUB_REF:10}
-        docker tag $PHP_ID:$VERSION
+        docker tag php $PHP_ID:$VERSION
         docker push $PHP_ID:$VERSION
-        docker tag $NGINX_ID:$VERSION
+        docker tag nginx $NGINX_ID:$VERSION
         docker push $NGINX_ID:$VERSION
     - name: Publish the latest image to Github Registry
       run: |
-        docker tag docker.pgk.github.com/${{ github.repository }}/php:latest
+        docker tag php docker.pgk.github.com/${{ github.repository }}/php:latest
         docker push docker.pgk.github.com/${{ github.repository }}/php:latest
-        docker tag docker.pgk.github.com/${{ github.repository }}/nginx:latest
+        docker tag nginx docker.pgk.github.com/${{ github.repository }}/nginx:latest
         docker push docker.pgk.github.com/${{ github.repository }}/nginx:latest
