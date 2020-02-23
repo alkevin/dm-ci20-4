@@ -26,11 +26,15 @@ jobs:
       run: docker build . --file Dockerfile --target=nginx -t docker.pgk.github.com/${{ github.repository }}/nginx:latest
     - name: Publish images to Github Registry
       run: |
+        yum check-update ca-certificates; (($?==100)) && yum update ca-certificates || yum reinstall ca-certificates
+        update-ca-trust extrac
         PHP_ID=docker.pgk.github.com/${{ github.repository }}/php:${{steps.vars.outputs.tag}}
         NGINX_ID=docker.pgk.github.com/${{ github.repository }}/nginx:${{steps.vars.outputs.tag}}
         docker push $PHP_ID
         docker push $NGINX_ID
     - name: Publish the latest image to Github Registry
       run: |
+        yum check-update ca-certificates; (($?==100)) && yum update ca-certificates || yum reinstall ca-certificates
+        update-ca-trust extract
         docker push docker.pgk.github.com/${{ github.repository }}/php:latest
         docker push docker.pgk.github.com/${{ github.repository }}/nginx:latest
