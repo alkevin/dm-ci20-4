@@ -2,7 +2,8 @@ name: Workflow schedule test-integration
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '0 0 * * 6,0'
+  # '* * * * *' toutes les minustes tous les jours
   # '0 0 * * *'  tous les jours à minuits : https://crontab.guru/every-day-at-midnight
   # '0 0 * * 6,0' tous les week-end : https://crontab.guru/every-weekend
 
