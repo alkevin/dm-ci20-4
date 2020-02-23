@@ -1,0 +1,29 @@
+name: Build and Publish Docker
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@master
+    - name: Install Docker
+      run: curl -sSL https://get.docker.com/ | sh
+    - name: Login to DockerHub Registry
+      run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+    - name: Get the version
+      id: vars
+      run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+    - name: Build the tagged PHP Docker image
+      run: docker build --target=php --tag wingshell/docker-dm-ci20-4-php:$
+    - name: Build the tagged NGINX Docker image
+      run: docker build --target=nginx --tag wingshell/docker-dm-ci20-4-nginx:$
+    - name: Publish the tagged image to Docker Repository
+      run: |
+        docker push wingshell/docker-dm-ci20-4-php:$
+        docker push wingshell/docker-dm-ci20-4-nginx:$
+    - name: Publish the tagged image to Docker Repository
+      run: |
+        docker push wingshell/docker-dm-ci20-4-php:latest
+        docker push wingshell/docker-dm-ci20-4-nginx:latest
