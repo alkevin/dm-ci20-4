@@ -13,7 +13,7 @@ Star wars api bind planet is an API done with Symfony framework. It allows you t
 -------
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/alkevin/dm-ci20-4/blob/master/CODE_OF_CONDUCT.md)
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/%3A"Workflow+for+hadolint?label=ci%20test&logo=github&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow%20for%20hadolint?label=ci%20test&logo=github&style=for-the-badge)
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow for php-cs?label=php-cs&style=for-the-badge)
 
