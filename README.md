@@ -64,6 +64,8 @@ See all [package](https://github.com/alkevin/dm-ci20-4/packages) available.
 
 See also the list of [contributors](https://github.com/alkevin/dm-ci20-4/graphs/contributors) who participated in this project.
 
-## Licence
+## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/alkevin/dm-ci20-4/blob/master/LICENCE.md) file for details
+DM Continuous Integration (20.4) Star Was API is MIT licensed, as found in the [LICENSE][0] file.
+
+[0]: https://github.com/alkevin/dm-ci20-4/blob/master/LICENCE.md
