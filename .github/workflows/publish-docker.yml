@@ -26,9 +26,9 @@ jobs:
       run: docker build . --file Dockerfile --target=nginx -t docker.pkg.github.com/${{ github.repository }}/nginx:latest
     - name: Publish images to Github Registry
       run: |
-        docker push docker.pkg.github.com/${{ github.repository }}/php:${{steps.vars.outputs.tag}}
-        docker push docker.pkg.github.com/${{ github.repository }}/nginx:${{steps.vars.outputs.tag}}
-    - name: Publish the latest image to Github Registry
-      run: |
-        docker push docker.pkg.github.com/${{ github.repository }}/php:latest
-        docker push docker.pkg.github.com/${{ github.repository }}/nginx:latest
+        PHP_ID=docker.pkg.github.com/${{ github.repository }}/php
+        NGINX_ID=docker.pkg.github.com/${{ github.repository }}/nginx
+        docker push $PHP_ID:${{steps.vars.outputs.tag}}
+        docker push $NGINX_ID:${{steps.vars.outputs.tag}}
+        docker push $PHP_ID:latest
+        docker push $NGINX_ID:latest
