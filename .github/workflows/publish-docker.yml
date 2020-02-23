@@ -13,23 +13,24 @@ jobs:
       run: curl -sSL https://get.docker.com/ | sh
     - name: Login to Github Registry
       run: echo ${{ secrets.REGISTRY_TOKEN }} | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+    - name: Get the version
+      id: vars
+      run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
     - name: Build the tagged PHP image
-      run: docker build . --file Dockerfile --target=php -t docker.pgk.github.com/${{ github.repository }}/php
+      run: docker build . --file Dockerfile --target=php -t docker.pgk.github.com/${{ github.repository }}/php:${{steps.vars.outputs.tag}}
     - name: Build the tagged NGINX image
-      run: docker build . --file Dockerfile --target=nginx -t docker.pgk.github.com/${{ github.repository }}/nginx
+      run: docker build . --file Dockerfile --target=nginx -t docker.pgk.github.com/${{ github.repository }}/nginx:${{steps.vars.outputs.tag}}
+    - name: Build the latest PHP image
+      run: docker build . --file Dockerfile --target=php -t docker.pgk.github.com/${{ github.repository }}/php:latest
+    - name: Build the latest NGINX image
+      run: docker build . --file Dockerfile --target=nginx -t docker.pgk.github.com/${{ github.repository }}/nginx:latest
     - name: Publish images to Github Registry
       run: |
-        PHP_ID=docker.pgk.github.com/${{ github.repository }}/php
-        NGINX_ID=docker.pgk.github.com/${{ github.repository }}/nginx
-        VERSION=$(echo ${GITHUB_REF:10})
-        echo ${GITHUB_REF:10}
-        docker tag php $PHP_ID:$VERSION
-        docker push $PHP_ID:$VERSION
-        docker tag nginx $NGINX_ID:$VERSION
-        docker push $NGINX_ID:$VERSION
+        PHP_ID=docker.pgk.github.com/${{ github.repository }}/php:${{steps.vars.outputs.tag}}
+        NGINX_ID=docker.pgk.github.com/${{ github.repository }}/nginx:${{steps.vars.outputs.tag}}
+        docker push $PHP_ID
+        docker push $NGINX_ID
     - name: Publish the latest image to Github Registry
       run: |
-        docker tag php docker.pgk.github.com/${{ github.repository }}/php:latest
         docker push docker.pgk.github.com/${{ github.repository }}/php:latest
-        docker tag nginx docker.pgk.github.com/${{ github.repository }}/nginx:latest
         docker push docker.pgk.github.com/${{ github.repository }}/nginx:latest
