@@ -1,7 +1,7 @@
 ---
 name: 🚀 Feature Request
 about: RFC and ideas for new features and improvements
-title: 'FEATURE REQ:  '
+title: ':bulb: FEATURE REQ:  '
 labels: feature
 assignees:
 ---
