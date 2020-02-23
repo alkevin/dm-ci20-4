@@ -12,7 +12,7 @@ jobs:
     - name: Install Docker
       run: curl -sSL https://get.docker.com/ | sh
     - name: Login to DockerHub Registry
-      run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login docker.pkg.github.com -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      run: echo ${{ secrets.REGISTRY_TOKEN }} | docker login docker.pkg.github.com -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
     - name: Get the version
       id: vars
       run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
