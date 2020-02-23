@@ -13,14 +13,7 @@ Star wars api bind planet is an API done with Symfony framework. It allows you t
 -------
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/alkevin/dm-ci20-4/blob/master/CODE_OF_CONDUCT.md)
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow%20for%20hadolint?label=ci%20test&logo=github&style=for-the-badge)
-
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow for php-cs?label=php-cs&style=for-the-badge)
-
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow for hadolint?label=hadolint&style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow for security-checker?label=security%20checker&style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow schedule test-integration?label=shedule&style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Build and Publish Github regisrty?label=publish&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow%20for%20hadolint?label=ci%20test&logo=github&style=for-the-badge) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow%20for%20php-cs?label=php-cs&style=for-the-badge) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow%20for%20hadolint?label=hadolint&style=for-the-badge) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow%20for%20security-checker?label=security%20checker&style=for-the-badge) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow%20schedule%20test-integration?label=shedule&style=for-the-badge) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Build%20and%20Publish%20Github%20regisrty?label=publish&style=for-the-badge)
 
 -------
 
