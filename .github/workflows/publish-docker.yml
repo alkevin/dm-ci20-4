@@ -15,13 +15,20 @@ jobs:
       run: echo ${{ secrets.REGISTRY_TOKEN }} | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
     - name: Get the version
       id: vars
-      run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+      run: |
+        echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+        echo tag
     - name: Build the tagged PHP image
       run: docker build . --file Dockerfile --target=php -t docker.pgk.github.com/${{ github.repository }}/php
     - name: Build the tagged NGINX image
       run: docker build . --file Dockerfile --target=nginx -t docker.pgk.github.com/${{ github.repository }}/nginx
     - name: Publish the tagged image to Github Registry
       run: |
+        PHP_ID=docker.pgk.github.com/${{ github.repository }}/php
+        NGINX_ID=docker.pgk.github.com/${{ github.repository }}/nginx
+        Version=$(echo ${GITHUB_REF:10})
+        echo tag
+        echo :$
         docker tag php docker.pgk.github.com/${{ github.repository }}/php:$
         docker push docker.pgk.github.com/${{ github.repository }}/php:$
         docker tag nginx docker.pgk.github.com/${{ github.repository }}/nginx:$
