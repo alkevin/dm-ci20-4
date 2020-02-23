@@ -12,8 +12,13 @@ Star wars api bind planet is an API done with Symfony framework. It allows you t
 
 -------
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://github.com/alkevin/dm-ci20-4/blob/master/CODE_OF_CONDUCT.md)
-![CI test](https://github.com/alkevin/dm-ci20-4/workflows/CI%20test/badge.svg)
-![Php Cs Fixer](https://github.com/alkevin/dm-ci20-4/workflows/Php%20Cs%20Fixer/badge.svg)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow for test my app?label=ci%20test&logo=github&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow for php-cs?label=php-cs&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow for hadolint?label=hadolint&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow for security-checker?label=security%20checker&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Workflow schedule test-integration?label=shedule&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alkevin/dm-ci20-4/Build and Publish Github regisrty?label=publish&style=for-the-badge)
+
 -------
 
 ## Getting Stated
