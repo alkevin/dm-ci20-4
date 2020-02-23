@@ -23,7 +23,7 @@ jobs:
       run: |
         docker push wingshell/docker-dm-ci20-4-php:$
         docker push wingshell/docker-dm-ci20-4-nginx:$
-        - name: Publish the tagged image to Docker Repository
+    - name: Publish the tagged image to Docker Repository
       run: |
         docker push wingshell/docker-dm-ci20-4-php:latest
         docker push wingshell/docker-dm-ci20-4-nginx:latest
